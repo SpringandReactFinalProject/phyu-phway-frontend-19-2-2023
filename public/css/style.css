@@ -1,17 +1,3 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 /********** Template CSS **********/
 :root {
     --primary: #13C5DD;
@@ -110,7 +96,14 @@ code {
     }
 }
 
+.b-light{
+    background-color: #1D2A4D !important;
+}
 
+.hero-header {
+    background: url(../img/hero.jpg) top right no-repeat;
+    background-size: cover;
+}
 
 .service-item {
     position: relative;
@@ -255,5 +248,3 @@ code {
     width: 150px;
     height: 150px;
 }
-
-
