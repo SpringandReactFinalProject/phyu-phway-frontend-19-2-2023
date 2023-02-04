@@ -1,11 +1,12 @@
 import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
 
+
 import axios from "axios";
 
 const POST_NEW_CONTRACT = 'http://localhost:8080/api/contract/create';
 const GET_ALL_CONTRACT= "http://localhost:8080/api/contract/all";
 
-export const fetchContract = createAsyncThunk('projects/fetchProjects', async (token)=>{
+export const fetchContract = createAsyncThunk('projects/fetchContract', async (token)=>{
     const response = await axios.get(GET_ALL_CONTRACT,{
         headers:{
             'Authorization':token,
@@ -79,6 +80,6 @@ export const contractSlice = createSlice({
     
 });
 
-export const { addContract } = projectSlice.actions;
+export const { addContract } = contractSlice.actions;
 
 export default contractSlice.reducer;

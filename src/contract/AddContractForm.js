@@ -2,10 +2,6 @@ import { useState } from "react";
 import {addNewContract} from "./contractSlice"
 function AddContractForm() {
 
-    
-
-    
-
     return (
 
         <div className="container-fluid py-5">
