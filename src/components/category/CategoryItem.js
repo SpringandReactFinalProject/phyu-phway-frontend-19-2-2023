@@ -1,41 +1,57 @@
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { deleteCategory } from "./categorySlices";
+import AddCategoryForm from "./AddCategoryForm";
 
 function CategoryItem(props){
 
     const dispatch = useDispatch()
     return(
+
+        <tr>
+        
+           <td> {props.id}</td>
+                
+                <td>{props.categoryName}</td>
+                <td>{props.description}</td>
+                <td className="text-center">
+
+                    <Link to={`/category/edit/${props.id}`}>
+                    <button className="btn btn-success mx-2">Update</button>
+                    </Link>
+                    <Link>
+                    <a onClick={()=>{dispatch(deleteCategory(props.id))}}>
+                    <button className="btn btn-danger">Delete</button></a>  </Link>
+                  
+                   
+                </td>
+                
+        </tr>
         
         
-        <div class="container-fluid py-9" >
-        <div class="container">
-            
-            <div class="row g-10">
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon mb-4">
-                            <i class="fa fa-2x fa-user-md text-white"></i>
-                        </div>
+        
+                // <div class="col-lg-4 col-md-6">
+                //     <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                //         <div class="service-icon mb-4">
+                //             <i class="fa  fa-user-md text-white"></i>
+                //         </div>
+                //       {/* <h4 class="mb-2">CategoryId : {props.id}</h4> */}
+                //         <h5 class="mb-2">CategoryName :{props.categoryName}</h5>
+                //         <p class="mb-2">Description : {props.description}</p>
                        
-                        <h4 class="mb-3">{props.categoryName}</h4>
-                        <p class="m-0">{props.description}</p>
-                        <p class="m-0">{props.createdAt}</p>
-                        <p class="m-0">{props.updatedAt}</p>
-                        <a class="btn btn-lg btn-primary rounded-pill" href="">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                      <tr>  <Link to={`/category/edit/${props.id}`} >
-                        <input type="submit" value = "Edit"/>
-                      </Link>
-                        <a onClick={()=>{dispatch(deleteCategory(props.id))}}>
-                        <input type="submit" value = "Delete"/></a></tr>
-                    </div>
-                </div>
+                //         <a class="btn btn-lg btn-primary rounded-pill" href="">
+                //             <i class="bi bi-arrow-right"></i>
+                //         </a>
+                //         <div >  
+                //         <Link to={`/category/edit/${props.id}`} >
+                //         <button className="btn btn-success mx-3">Edit</button>
+                //       </Link>
+                //         <a onClick={()=>{dispatch(deleteCategory(props.id))}}>
+                //         <button className="btn btn-danger">Delete</button></a></div>
+                //     </div>
+                // </div>
                
-            </div>
-        </div>
-        </div>
+           
       
         );
         }

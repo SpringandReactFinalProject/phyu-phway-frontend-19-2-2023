@@ -1,7 +1,8 @@
 
 
-import CategoryList from "./category/CategoryList";
-import CreateCategoryButton from "./category/CreateCategoryButton";
+
+import CategoryTable from "./table/CategoryTable";
+
 
 function Category(){
     return (
@@ -9,12 +10,13 @@ function Category(){
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="display-4 text-center">Category</h1>
+                    <h1 class="display-4 text-center text-primary">Category List</h1>
                     <br />
-                   <CreateCategoryButton />
+                   
+
                     <br />
                     <hr />
-                  <CategoryList />
+                  <CategoryTable />
                    
                 </div>
             </div>

@@ -32,8 +32,7 @@ function CategoryList(){
                     id = {category.id}
                     categoryName = {category.categoryName}
                     description = {category.description}
-                    createdAt = {category.createdAt}
-                    updatedAt = {category.updatedAt}
+                   
                   
                     />)
                    

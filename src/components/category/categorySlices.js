@@ -19,8 +19,8 @@ export const fetchCategories = createAsyncThunk('categories/fetchCategories',asy
     return response.data
  })
 
- export const updateCategory = createAsyncThunk('categories/updateCategory',async (initialCategory) => {
-    const response = await axios.post(POST_NEW_CATEGORIES,initialCategory);
+ export const updateCategory = createAsyncThunk('categories/updateCategory',async (data) => {
+    const response = await axios.post(POST_NEW_CATEGORIES,data);
     return response.data
  })
 
@@ -53,6 +53,7 @@ export const categorySlices = createSlice({
     prepare(categoryName,description){
         return{
          payload:{
+            
             categoryName,
             description
 
